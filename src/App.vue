@@ -1,26 +1,35 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app" class="bg-pastel-blue/20 min-h-screen">
+    <header class="app-header">
+      <h1 class="text-5xl font-comic-neue font-bold text-gray-800">To-Do Randomizer</h1>
+    </header>
+    <main>
+      <TaskList />
+    </main>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import TaskList from './components/TaskList.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TaskList
   }
 }
 </script>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Inter:wght@500&display=swap');
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+}
+
+.app-header {
+  padding: 60px 20px 40px;
 }
 </style>
