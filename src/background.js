@@ -19,13 +19,16 @@ async function createWindow() {
   win = new BrowserWindow({
     width: 800,
     height: 600,
+    frame: false,
+    titleBarStyle: 'hidden',
+    trafficLightPosition: { x: 15, y: 15 },
     webPreferences: {
       
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
       contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION,
-      preload: path.join(__dirname, 'preload.js')
+      preload: path.join(__dirname, '../src/preload.js')
     }
   })
 

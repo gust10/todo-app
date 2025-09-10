@@ -16,11 +16,11 @@
 
 <script>
 import { ref, nextTick, onMounted } from 'vue';
-import confetti from 'vue-confetti';
 
 export default {
   name: 'TaskItem',
   props: {
+//... existing code
     task: {
       type: Object,
       required: true
@@ -28,6 +28,7 @@ export default {
   },
   emits: ['delete', 'edit', 'toggle'],
   setup(props, { emit }) {
+//... existing code
     const isEditing = ref(false);
     const editText = ref(props.task.text);
     const editInput = ref(null);
@@ -44,18 +45,10 @@ export default {
 
     const toggleTask = () => {
       emit('toggle', props.task.id);
-      if (!props.task.done) {
-        confetti.start({
-          particles: [
-            { type: 'heart' },
-            { type: 'circle' },
-          ],
-          colors: ['#fecdd3', '#d1fae5', '#bfdbfe', '#e9d5ff'],
-        });
-      }
     };
 
     const startEditing = () => {
+//... existing code
       isEditing.value = true;
       nextTick(() => {
         editInput.value.focus();
@@ -63,6 +56,7 @@ export default {
     };
 
     const finishEditing = () => {
+//... existing code
       if (isEditing.value) {
         isEditing.value = false;
         if (editText.value.trim() !== '') {

@@ -31,5 +31,10 @@ export default {
 
 .app-header {
   padding: 60px 20px 40px;
+  -webkit-app-region: drag;
+}
+
+#app {
+  padding-top: 30px;
 }
 </style>
